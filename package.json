@@ -12,11 +12,13 @@
     "ejs": "~2.5.6",
     "errorhandler": "^1.5.0",
     "express": "~4.15.2",
+    "express-flash": "0.0.2",
     "express-session": "^1.15.2",
+    "express3-handlebars": "^0.5.2",
+    "mongoose": "^4.9.7",
     "morgan": "~1.8.1",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "serve-favicon": "~2.4.2",
-    "express3-handlebars": "^0.5.2"
+    "serve-favicon": "~2.4.2"
   }
 }

@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var passport = require('../auth/passport_config');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', passport.authenticateMiddleware(), function(req, res, next) {
   res.render('home', { title: 'Express' });
 });
 
