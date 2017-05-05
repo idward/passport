@@ -13,7 +13,7 @@ router.get('/login', passport.unAuthenticateMiddleware(), function (req, res, ne
 //     failureRedirect: '/users/loginFailure'
 // }));
 router.post('/login', passport.authenticate('local',
-    {failureRedirect: '/users/loginFailure'}),
+    {failureRedirect: '/users/loginFailure',failureFlash:true}),
     function (req, res) {
         //console.log('user: ' + req.user);
         res.redirect('/');
@@ -22,7 +22,7 @@ router.post('/login', passport.authenticate('local',
 router.get('/loginFailure', function (req, res) {
     res.render('user-loginFailure', {
         title: 'Login Failure',
-        content: 'username or password is not correct. please try again.'
+        content: req.flash('error') + ' please try again.'
     });
 });
 
